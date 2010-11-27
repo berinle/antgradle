@@ -1,0 +1,17 @@
+<project basedir="." default="mycompile" name="myproject">
+    
+    <property file="build.properties"/>
+
+    <target  name="myinit">
+        <mkdir  dir="${classes.dir}"/>
+    </target>
+    <target  name="mycompile" depends="myinit">
+        <echo message="doing compile"/>
+        <javac  srcdir="${src.dir}" destdir = "${classes.dir}"
+                debug = "on" fork="true"/>
+    </target>
+
+    <target  name="myclean">
+        <delete  dir="${build.dir}"/>
+    </target>
+</project>

@@ -1,0 +1,11 @@
+apply plugin: 'java'
+sourceCompatibility = 1.5
+version = 1.0
+
+task init << {
+	sourceSets.all*.java.srcDirs*.each { it.mkdirs() }
+	sourceSets.all*.resources.srcDirs*.each { it.mkdirs() }
+}
+
+
+ant.importBuild "build.xml"
